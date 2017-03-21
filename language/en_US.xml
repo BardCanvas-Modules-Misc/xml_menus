@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <display_name>XML Menus</display_name>
+    <icon>fa-bars</icon>
+    <description>
+        Custom menu elements for the main menu bar, defined in XML (with code editor)
+    </description>
+
+    <admin>
+        <menu_items>
+            <admin_menu_caption>Menu editor</admin_menu_caption>
+        </menu_items>
+    </admin>
+    
+    <editor_title>Custom menu items editor</editor_title>
+    
+    <menu_code>Menu entries XML code</menu_code>
+    <format_instructions><![CDATA[
+        
+        Menu entries are defined in XML format. You can define single entries and entries with submenus.<br><br>
+        
+        To define a single element you use the next syntax:<br>
+        <blockquote>
+            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" link="<code>http://facebook.com</code>" /&gt;</pre>
+        </blockquote>
+        
+        To define an element with a submenu you use the next syntax:<br>
+        <blockquote>
+            <pre>&lt;menu id="<code>social_networks</code>" icon="<code>fa-globe</code>" caption="<code>Social Networks</code>"&gt;
+    &lt;item icon="<code>fa-facebook-official</code>">
+        &lt;caption><code>Facebook</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://www.facebook.com</code>&lt;/link>
+    &lt;/item>
+    &lt;item icon="<code>fa-twitter-square</code>">
+        &lt;caption><code>Twitter</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://www.twitter.com</code>&lt;/link>
+    &lt;/item>
+    &lt;item icon="<code>fa-google-plus</code>">
+        &lt;caption><code>Google Plus</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://plus.google.com</code>&lt;/link>
+    &lt;/item>
+&lt;/menu&gt;</pre>
+        </blockquote>
+        
+        Attributes for <code>menu</code> tags:<br>
+        <ul>
+            <li>
+                <span class="fixed_font">id="<code>element_id</code>"</span>
+                sets an id to the generated element and allow it to be modified with CSS or JavaScript.
+            </li>
+            <li>
+                <span class="fixed_font">priority="<code>number</code>"</span>
+                allows the element to be shown towards the left or right depending on the priority set to other elements.
+                The base priority is set to 500, and usually increased/decreased in hundreds.
+            </li>
+            <li>
+                <span class="fixed_font">icon="<code>class</code>"</span>
+                sets a Font Awesome icon to the element. You can see a reference
+                <a href="http://fontawesome.io/icons/" target="_blank">here</a>.
+            </li>
+            <li>
+                <span class="fixed_font">caption="<code>string</code>"</span>
+                sets the caption to be shown. 
+            </li>
+            <li>
+                <span class="fixed_font">link="<code>url</code>"</span>
+                to jumpt to. It is ignored if the element has submenu items.
+            </li>
+            <li>
+                <span class="fixed_font">classes="<code>class class class</code>"</span>
+                allows special classes to change the element's color.
+                Predefined classes: <code>always_visible</code> to prevent hiding it when the
+                menu is collapsed and <code>highlighted</code> to highlight it.
+            </li>
+            <li>
+                <span class="fixed_font">min_level="<code>number</code>"</span>
+                limits the element to be shown to users with a level equal to or above the number.
+            </li>
+            <li>
+                <span class="fixed_font">max_level="<code>number</code>"</span>
+                limits the element to be shown to users with a level equal to or below the number.
+            </li>
+        </ul>
+        
+        As you can notice, <code>item</code> tags use, instead of attributes,
+        the nested <code>caption</code> and <code>link</code>
+        tags. Also there are additional attributes for <code>item</code> tags:<br>
+        <ul>
+            <li>
+                <span class="fixed_font">user_scope="<code>online|offline</code>"</span>
+                allows you to show the item exclusively to <code>online</code> or <code>offline</code> users.
+            </li>
+            <li>
+                <span class="fixed_font">icon="<code>class</code>"</span>
+                sets a Font Awesome icon to the element. You can see a reference
+                <a href="http://fontawesome.io/icons/" target="_blank">here</a>.
+            </li>
+            <li>
+                <span class="fixed_font">classes="<code>class class class</code>"</span>
+                allows special classes to change the element's color.
+                Predefined classes: <code>always_visible</code> to prevent hiding it when the
+                menu is collapsed and <code>highlighted</code> to highlight it.
+            </li>
+        </ul>
+        
+        If you want an items separator you can add a single <code>item</code> tag as shown below:
+        <blockquote>
+            <pre>&lt;item is_separator="true" /></pre>
+        </blockquote>
+        
+    ]]></format_instructions>
+    
+    <html_in_header>HTML code to inject in the header</html_in_header>
+    <html_info><![CDATA[
+        Use this editor to add <code>script</code> or <code>style</code> tags in the <code>head</code> area.<br>
+        You can inject CSS rules to hide menu elements rendered by other modules, E.G.:<br>
+        <pre class="framed_content" style="margin: 0">&lt;style type="text/css"&gt;
+    /* Use this to hide the "Posts" menu item: */
+    #header .menu .main_menu_item[data-module='posts'] { display: none; }
+    
+    /* Use this to hide the "Media" menu item: */
+    #header .menu .main_menu_item[data-module='gallery'] { display: none; }
+    
+    /* Use this to hide the "Comments" menu item: */
+    #header .menu .main_menu_item[data-module='comments'] { display: none; }
+    
+    /* Use this to hide the "Contact" menu item: */
+    #header .menu .main_menu_item[data-module='contact'] { display: none; }
+&lt;/style&gt;</pre>
+    ]]></html_info>
+    
+</language>

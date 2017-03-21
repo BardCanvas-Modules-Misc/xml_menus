@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <display_name>Menús en XML</display_name>
+    <icon>fa-bars</icon>
+    <description>
+        Elementos personalizados para la barra de menú principal, definidos en XML (con editor de código)
+    </description>
+
+    <admin>
+        <menu_items>
+            <admin_menu_caption>Editor de menú</admin_menu_caption>
+        </menu_items>
+    </admin>
+    
+    <editor_title>Editor de elementos personalizados en menú</editor_title>
+    
+    <menu_code>Código XML para entradas en el menú</menu_code>
+    <format_instructions><![CDATA[
+        
+        Los elementos del menú se definen en formato XML. Puedes definir elementos sencillos o con submenús.<br><br>
+        
+        Para definir un elemento sencillo usa la siguiente sintaxis:<br>
+        <blockquote>
+            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" link="<code>http://facebook.com</code>" /&gt;</pre>
+        </blockquote>
+        
+        Para definir un elemento con un submenú usa la siguiente sintaxis:<br>
+        <blockquote>
+            <pre>&lt;menu id="<code>redes_sociales</code>" icon="<code>fa-globe</code>" caption="<code>Redes Sociales</code>"&gt;
+    &lt;item icon="<code>fa-facebook-official</code>">
+        &lt;caption><code>Facebook</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://www.facebook.com</code>&lt;/link>
+    &lt;/item>
+    &lt;item icon="<code>fa-twitter-square</code>">
+        &lt;caption><code>Twitter</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://www.twitter.com</code>&lt;/link>
+    &lt;/item>
+    &lt;item icon="<code>fa-google-plus</code>">
+        &lt;caption><code>Google Plus</code>&lt;/caption>
+        &lt;link target="<code>_blank</code>"><code>https://plus.google.com</code>&lt;/link>
+    &lt;/item>
+&lt;/menu&gt;</pre>
+        </blockquote>
+        
+        Atributos para las etiquetas <code>menu</code>:<br>
+        <ul>
+            <li>
+                <span class="fixed_font">id="<code>id_del_elemento</code>"</span>
+                establece un identificador al elemento generado, permitiendo modificarlo con CSS o JavaScript.
+            </li>
+            <li>
+                <span class="fixed_font">priority="<code>número</code>"</span>
+                permite que el elemento se muestre hacia la izquierda o hacia la derecha dependiendo de la prioridad puesta
+                a otros elementos. La prioridad base es <code>500</code> y usualmente se incrementa/decrementa en cientos.
+            </li>
+            <li>
+                <span class="fixed_font">icon="<code>clase</code>"</span>
+                establece un icono de Font Awesome al elemento. Puedes encontrar una referencia
+                <a href="http://fontawesome.io/icons/" target="_blank">aquí</a>.
+            </li>
+            <li>
+                <span class="fixed_font">caption="<code>string</code>"</span>
+                establece la leyenda a mostrar.
+            </li>
+            <li>
+                <span class="fixed_font">link="<code>url</code>"</span>
+                hacia dónde dirigirse. Es ignorada si el elemento tiene items de submenú.
+            </li>
+            <li>
+                <span class="fixed_font">classes="<code>clase clase clase</code>"</span>
+                permite clases especiales para cambiar el color del elemento.
+                Clases predefinidas: <code>always_visible</code> para evitar que el elemento se oculte cuando
+                el menú se colapsa y <code>highlighted</code> para resaltarlo.
+            </li>
+            <li>
+                <span class="fixed_font">min_level="<code>número</code>"</span>
+                permite que el elemento se muestre sólo a usuarios con un nivel igual o mayor al número.
+            </li>
+            <li>
+                <span class="fixed_font">max_level="<code>número</code>"</span>
+                permite que el elemento se muestre sólo a usuarios con un nivel menor o igual al número.
+            </li>
+        </ul>
+        
+        Como puedes notar, la etiqueta<code>item</code> usa, en lugar de atributos,
+        las etiquetas anidadas <code>caption</code> y <code>link</code>.
+        Adicionalmente, los siguientes atributos se le pueden poner a las etiquetas<code>item</code>:<br>
+        <ul>
+            <li>
+                <span class="fixed_font">user_scope="<code>online|offline</code>"</span>
+                permite que el item se muestre exclusivamente a los usuarios que tienen sesión abierta
+                (<code>online</code>) o a anónimos (<code>offline</code>).
+            </li>
+            <li>
+                <span class="fixed_font">icon="<code>clase</code>"</span>
+                establece un icono de Font Awesome al elemento. Puedes encontrar una referencia
+                <a href="http://fontawesome.io/icons/" target="_blank">aquí</a>.
+            </li>
+            <li>
+                <span class="fixed_font">classes="<code>clase clase clase</code>"</span>
+                permite clases especiales para cambiar el color del elemento.
+                Clases predefinidas: <code>always_visible</code> para evitar que el elemento se oculte cuando
+                el menú se colapsa y <code>highlighted</code> para resaltarlo.
+            </li>
+        </ul>
+        
+        Si deseas insertar un separador en items de un submenú, puedes usar la etiqueta <code>item</code>
+        de la siguiente forma:
+        <blockquote>
+            <pre>&lt;item is_separator="true" /></pre>
+        </blockquote>
+        
+    ]]></format_instructions>
+    
+    <html_in_header>Código HTML a inyectar en el encabezado</html_in_header>
+    <html_info><![CDATA[
+        Usa este editor para añadir etiquetas <code>script</code> o <code>style</code> en el área <code>head</code>
+        del documento.<br>
+        Puedes inyectar reglas CSS para ocultar elementos del menú añadidos por otros módulos. Ejemplos:<br>
+        <pre class="framed_content" style="margin: 0">&lt;style type="text/css"&gt;
+    /* Para ocultar el elemento "Entradas" del módulo de posts: */
+    #header .menu .main_menu_item[data-module='posts'] { display: none; }
+    
+    /* Para ocultar el elemento de la galería de medios: */
+    #header .menu .main_menu_item[data-module='gallery'] { display: none; }
+    
+    /* Para ocultar el elemento del módulo de comentarios: */
+    #header .menu .main_menu_item[data-module='comments'] { display: none; }
+    
+    /* Para ocultar el elemento del módulo de contacto: */
+    #header .menu .main_menu_item[data-module='contact'] { display: none; }
+&lt;/style&gt;</pre>
+    ]]></html_info>
+    
+</language>
