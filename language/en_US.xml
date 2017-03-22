@@ -22,7 +22,7 @@
         
         To define a single element you use the next syntax:<br>
         <blockquote>
-            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" link="<code>http://facebook.com</code>" /&gt;</pre>
+            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" href="<code>http://facebook.com</code>" /&gt;</pre>
         </blockquote>
         
         To define an element with a submenu you use the next syntax:<br>
@@ -64,8 +64,8 @@
                 sets the caption to be shown. 
             </li>
             <li>
-                <span class="fixed_font">link="<code>url</code>"</span>
-                to jumpt to. It is ignored if the element has submenu items.
+                <span class="fixed_font">href="<code>url</code>"</span>
+                URL to jumpt to. It is ignored if the element has submenu items.
             </li>
             <li>
                 <span class="fixed_font">classes="<code>class class class</code>"</span>

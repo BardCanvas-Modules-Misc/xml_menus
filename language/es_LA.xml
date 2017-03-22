@@ -22,7 +22,7 @@
         
         Para definir un elemento sencillo usa la siguiente sintaxis:<br>
         <blockquote>
-            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" link="<code>http://facebook.com</code>" /&gt;</pre>
+            <pre>&lt;menu icon="<code>fa-facebook-official</code>" caption="<code>Facebook</code>" href="<code>http://facebook.com</code>" /&gt;</pre>
         </blockquote>
         
         Para definir un elemento con un submenú usa la siguiente sintaxis:<br>
@@ -64,8 +64,8 @@
                 establece la leyenda a mostrar.
             </li>
             <li>
-                <span class="fixed_font">link="<code>url</code>"</span>
-                hacia dónde dirigirse. Es ignorada si el elemento tiene items de submenú.
+                <span class="fixed_font">href="<code>url</code>"</span>
+                URL hacia dónde dirigirse. Es ignorada si el elemento tiene items de submenú.
             </li>
             <li>
                 <span class="fixed_font">classes="<code>clase clase clase</code>"</span>
