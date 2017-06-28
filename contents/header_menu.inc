@@ -44,7 +44,7 @@ foreach($menu_xml->menu as $menu)
     if( empty($menu->item) )
         $template->add_menu_item(
             $caption,
-            "<a class='main_menu_item <? $classes ?>' id='$id' href='{$link}'>
+            "<a class='main_menu_item $classes' id='$id' href='{$link}'>
                 <span class='fa {$icon}'></span>
                 {$caption}
             </a>",
