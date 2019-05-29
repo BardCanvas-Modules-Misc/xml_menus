@@ -53,7 +53,7 @@ foreach($menu_xml->menu as $menu)
     else
         $template->add_menu_item(
             $caption,
-            "<span class='main_menu_item $classes is_submenu_trigger' data-module='foroelite_menus' style='cursor: pointer;' 
+            "<span class='main_menu_item $classes is_submenu_trigger' data-module='xml_menus' style='cursor: pointer;' 
                   id='$id' data-submenu='#{$id}_menu_items'>
                 <span class='fa {$icon}'></span>
                 {$caption}
