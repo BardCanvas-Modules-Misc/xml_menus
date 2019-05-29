@@ -1,6 +1,10 @@
 
 # XML Menus Editor Module Change Log
 
+## [1.0.3] - 2019-05-28
+
+- Fixed wrong module name in generated menu items.
+
 ## [1.0.2] - 2017-06-27
 
 - Fixed wrongly placed PHP tags.
