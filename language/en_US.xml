@@ -68,7 +68,7 @@
                 URL to jumpt to. It is ignored if the element has submenu items.
             </li>
             <li>
-                <span class="fixed_font">classes="<code>class class class</code>"</span>
+                <span class="fixed_font">class="<code>class class class</code>"</span>
                 allows special classes to change the element's color.
                 Predefined classes: <code>always_visible</code> to prevent hiding it when the
                 menu is collapsed and <code>highlighted</code> to highlight it.
@@ -97,7 +97,7 @@
                 <a href="http://fontawesome.io/icons/" target="_blank">here</a>.
             </li>
             <li>
-                <span class="fixed_font">classes="<code>class class class</code>"</span>
+                <span class="fixed_font">class="<code>class class class</code>"</span>
                 allows special classes to change the element's color.
                 Predefined classes: <code>always_visible</code> to prevent hiding it when the
                 menu is collapsed and <code>highlighted</code> to highlight it.

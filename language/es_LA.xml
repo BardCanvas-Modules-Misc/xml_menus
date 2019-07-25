@@ -68,7 +68,7 @@
                 URL hacia dónde dirigirse. Es ignorada si el elemento tiene items de submenú.
             </li>
             <li>
-                <span class="fixed_font">classes="<code>clase clase clase</code>"</span>
+                <span class="fixed_font">class="<code>clase clase clase</code>"</span>
                 permite clases especiales para cambiar el color del elemento.
                 Clases predefinidas: <code>always_visible</code> para evitar que el elemento se oculte cuando
                 el menú se colapsa y <code>highlighted</code> para resaltarlo.
@@ -98,7 +98,7 @@
                 <a href="http://fontawesome.io/icons/" target="_blank">aquí</a>.
             </li>
             <li>
-                <span class="fixed_font">classes="<code>clase clase clase</code>"</span>
+                <span class="fixed_font">class="<code>clase clase clase</code>"</span>
                 permite clases especiales para cambiar el color del elemento.
                 Clases predefinidas: <code>always_visible</code> para evitar que el elemento se oculte cuando
                 el menú se colapsa y <code>highlighted</code> para resaltarlo.
