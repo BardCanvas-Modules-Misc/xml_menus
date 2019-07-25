@@ -53,7 +53,7 @@ foreach($menu_xml->menu as $menu):
                 <a class="main_menu_item <?= "$classes $added_class" ?>" <? if( ! empty($target)) echo "target='$target'"; ?>
                    style='cursor: pointer;' href="<?= $link ?>">
                     <? if( ! empty($icon) ): ?><span class="fa <?= $icon ?>"></span><? endif; ?>
-                    <?= $caption ?>
+                    <span class="caption"><?= $caption ?></span>
                 </a>
             <? endif; ?>
         <? endforeach; ?>

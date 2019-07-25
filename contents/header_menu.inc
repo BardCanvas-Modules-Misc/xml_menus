@@ -56,7 +56,7 @@ foreach($menu_xml->menu as $menu)
             "<span class='main_menu_item $classes is_submenu_trigger' data-module='xml_menus' style='cursor: pointer;' 
                   id='$id' data-submenu='#{$id}_menu_items'>
                 <span class='fa {$icon}'></span>
-                {$caption}
+                <span clasS='caption'>{$caption}</span>
                 <span class='menu_toggle'>
                     <span class='fa fa-caret-down'></span>
                     <span class='fa fa-caret-up' style='display: none;'></span>
