@@ -1,6 +1,11 @@
 
 # XML Menus Editor Module Change Log
 
+## [1.1.0] - 2019-07-25
+
+- Wrapped captions for ease of CSS manipulation.
+- Language files fixes.
+
 ## [1.0.3] - 2019-05-28
 
 - Fixed wrong module name in generated menu items.
