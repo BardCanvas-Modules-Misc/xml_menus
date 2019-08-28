@@ -9,12 +9,20 @@
 ?>
 
 <!-- CodeMirror -->
+<link rel="stylesheet" href="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/lib/codemirror.css">
+<link rel="stylesheet" href="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/foldgutter.css">
 <script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/lib/codemirror.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/foldcode.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/foldgutter.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/brace-fold.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/xml-fold.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/indent-fold.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/markdown-fold.js"></script>
+<script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/addon/fold/comment-fold.js"></script>
 <script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/mode/xml/xml.js"></script>
 <script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/mode/javascript/javascript.js"></script>
 <script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/mode/css/css.js"></script>
 <script                 src="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/mode/htmlmixed/htmlmixed.js"></script>
-<link rel="stylesheet" href="<?=$config->full_root_path?>/lib/CodeMirror-5.16.2/lib/codemirror.css">
 <style type="text/css">
     .CodeMirror {
         border:      1px solid silver;
@@ -48,7 +56,9 @@
             CodeMirror.fromTextArea(element, {
                 viewPortMargin: Infinity,
                 lineNumbers:    true,
-                mode:           mode
+                mode:           mode,
+                foldGutter:     true,
+                gutters:        ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
             });
         });
     });
