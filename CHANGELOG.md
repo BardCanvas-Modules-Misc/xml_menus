@@ -1,6 +1,10 @@
 
 # XML Menus Editor Module Change Log
 
+## [1.2.0] - 2019-08-29
+
+- Added code folding capability to the editor.
+
 ## [1.1.0] - 2019-07-25
 
 - Wrapped captions for ease of CSS manipulation.
