@@ -43,6 +43,13 @@
 &lt;/menu&gt;</pre>
         </blockquote>
         
+        To define a special <i>categories autofill</i> menu use the next syntax:<br>
+        <blockquote>
+            <pre>&lt;menu id="<code>categories_menu</code>" icon="<code>fa-folder</code>" caption="<code>Categories</code>"
+      categories_autofill="<code>all</code>" max_category_level="<code>2</code>"
+      excluded_categories="<code>uncategorized</code>" /&gt;</pre>
+        </blockquote>
+        
         Attributes for <code>menu</code> tags:<br>
         <ul>
             <li>
@@ -80,6 +87,21 @@
             <li>
                 <span class="fixed_font">max_level="<code>number</code>"</span>
                 limits the element to be shown to users with a level equal to or below the number.
+            </li>
+            <li>
+                <span class="fixed_font">categories_autofill="<code>all|parent:slug</code>"</span>
+                builds categories as menu items:<br>
+                <code>all</code> to render all available categories,<br>
+                <code>parent:slug</code> to render all child categories of the given slug.<br>
+                Important: the categories menu wont be rendered if no <code>id</code> is specified!
+            </li>
+            <li>
+                max_category_level="<code>n</code>" is optional, and if set, will limit rendering of
+                the categories tree up to the specified indent level.
+            </li>
+            <li>
+                excluded_categories="<code>slug,slug,...</code>" is optional, and if set, will
+                exclude the specified categories.
             </li>
         </ul>
         

@@ -43,6 +43,13 @@
 &lt;/menu&gt;</pre>
         </blockquote>
         
+        Para definir un menú especial con rellenado de categorías:<br>
+        <blockquote>
+            <pre>&lt;menu id="<code>categories_menu</code>" icon="<code>fa-folder</code>" caption="<code>Categorías</code>"
+      categories_autofill="<code>all</code>" max_category_level="<code>2</code>"
+      excluded_categories="<code>uncategorized</code>" /&gt;</pre>
+        </blockquote>
+        
         Atributos para las etiquetas <code>menu</code>:<br>
         <ul>
             <li>
@@ -80,6 +87,21 @@
             <li>
                 <span class="fixed_font">max_level="<code>número</code>"</span>
                 permite que el elemento se muestre sólo a usuarios con un nivel menor o igual al número.
+            </li>
+            <li>
+                <span class="fixed_font">categories_autofill="<code>all|parent:slug</code>"</span>
+                construye las categorías en elementos del menú:<br>
+                <code>all</code> para mostrar todas las categorías disponibles,<br>
+                <code>parent:slug</code> para mostrar las categorías hijas del slug proporcionado.<br>
+                Importante: el menú de categorías no se mostrará si no se ha especificado el atributo <code>id</code>.
+            </li>
+            <li>
+                max_category_level="<code>n</code>" es opcional, y limita el muestreo del árbol de categorías
+                hasta el nivel de indentado especificado.
+            </li>
+            <li>
+                excluded_categories="<code>slug,slug,...</code>" es opcional, y de especificarse,
+                excluirá las categorías cuyos slugs se incluyan.
             </li>
         </ul>
         

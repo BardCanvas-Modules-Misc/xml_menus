@@ -7,14 +7,10 @@
  * @author     Alejandro Caballero - lava.caballero@gmail.com
  */
 
-if( ! file_exists("{$config->datafiles_location}/xml_menu_menu_code.dat") ) return;
-if( filesize("{$config->datafiles_location}/xml_menu_menu_code.dat") == 0 ) return;
+if( empty($config->globals["@xml_menus:current_menu_tree"]) ) return;
 
-$menu_xml = simplexml_load_string(
-    "<?xml version=\"1.0\" encoding=\"utf-8\"?><xml_menu>\n" .
-    file_get_contents("{$config->datafiles_location}/xml_menu_menu_code.dat") .
-    "\n</xml_menu>"
-);
+$menu_xml = $config->globals["@xml_menus:current_menu_tree"];
+
 foreach($menu_xml->menu as $menu):
     if( empty($menu->item) ) continue;
     
@@ -32,6 +28,7 @@ foreach($menu_xml->menu as $menu):
             $link       = trim($item->link);
             $target     = trim($item->link["target"]);
             $classes    = trim($item["class"]);
+            $style      = trim($item["style"]);
             
             $min_level = trim($item["min_level"]); if( empty($min_level) ) $min_level = 0;
             $max_level = trim($item["max_level"]); if( empty($max_level) ) $max_level = 255;
@@ -51,7 +48,7 @@ foreach($menu_xml->menu as $menu):
                 <hr>
             <? else: ?>
                 <a class="main_menu_item <?= "$classes $added_class" ?>" <? if( ! empty($target)) echo "target='$target'"; ?>
-                   style='cursor: pointer;' href="<?= $link ?>">
+                   style="cursor: pointer; <?= $style ?>" href="<?= $link ?>">
                     <? if( ! empty($icon) ): ?><span class="fa <?= $icon ?>"></span><? endif; ?>
                     <span class="caption"><?= $caption ?></span>
                 </a>
