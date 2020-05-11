@@ -1,6 +1,10 @@
 
 # XML Menus Editor Module Change Log
 
+## [1.3.0] - 2020-05-11
+
+- Added categories menu generator.
+
 ## [1.2.0] - 2019-08-29
 
 - Added code folding capability to the editor.
