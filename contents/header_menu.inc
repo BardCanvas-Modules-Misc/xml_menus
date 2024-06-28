@@ -18,7 +18,7 @@ use hng2_base\settings;
 use hng2_base\template;
 use hng2_modules\categories\categories_repository;
 
-global $modules;
+global $modules, $account;
 
 $config->globals["@xml_menus:current_menu_tree"] = null;
 
@@ -43,6 +43,9 @@ foreach($menu_xml->menu as $menu)
     $caption   = trim($menu["caption"]);
     $link      = trim($menu["href"]);
     $classes   = trim($menu["class"]);
+    
+    $user_name = $account->_exists ? $account->user_name : "undefined";
+    $link = preg_replace('/\{user_name\}/i', $user_name, $link);
     
     $is_cats_fill = trim($menu["categories_autofill"]);
     if( ! empty($is_cats_fill) && (empty($id) || ! $modules["categories"]->enabled) ) continue;
